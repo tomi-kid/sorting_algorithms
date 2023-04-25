@@ -1,37 +1,40 @@
 #include "sort.h"
 
 /**
- * insertion_sort_list - sorts list with insertion sort
+ * insertion_sort_list - sorts by insertion sort
  * @list: input list to sort
+ * @pointer: previous node
+ * @next: next node
  */
+
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *temp, *pn, *nxt;
+	listint_t *temp, *pointer, *next;
 
 	if (list && *list && (*list)->next)
 	{
 		temp = (*list)->next;
-		pn = temp->prev;
-		nxt = temp->next;
+		pointer = temp->prev;
+		nextt = temp->next;
 
 		while (temp)
 		{
-			if (temp->n < pn->n)
+			if (temp->n < pointer->n)
 			{
-				swap_list(pn, temp, nxt, list);
+				swap_list(pointer, temp, nextt, list);
 			}
-			temp = nxt;
+			temp = nextt;
 			if (temp)
 			{
-				nxt = temp->next;
-				pn = temp->prev;
+				nextt = temp->next;
+				pointer = temp->prev;
 			}
 		}
 	}
 }
 
 /**
- * swap_list - swaps the position of two nodes in a linked list
+ * swap_list - swap a linked list
  * @pn: previous node
  * @temp: temp
  * @nxt: next node
