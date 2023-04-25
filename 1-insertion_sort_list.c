@@ -1,4 +1,5 @@
 #include "sort.h"
+void Swap_Linked_List(listint_t *pn, listint_t *temp, listint_t *nxt, listint_t **h);
 
 /**
  * insertion_sort_list - sorts by insertion sort
