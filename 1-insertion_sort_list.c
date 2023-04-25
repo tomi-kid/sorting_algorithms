@@ -1,12 +1,9 @@
 #include "sort.h"
-void Swap_Linked_List(listint_t *pn, listint_t *temp, listint_t *nxt, listint_t **h);
+void SwapLink_L(listint_t *pn, listint_t *temp, listint_t *nxt, listint_t **h);
 
 /**
  * insertion_sort_list - sorts by insertion sort
  * @list: input list to sort
- * @pointer: previous node
- * @nextt: next node
- * @temp: used to store temporary node
  */
 
 void insertion_sort_list(listint_t **list)
@@ -23,7 +20,7 @@ void insertion_sort_list(listint_t **list)
 		{
 			if (temp->n < pointer->n)
 			{
-				Swap_Linked_List(pointer, temp, nextt, list);
+				SwapLink_L(pointer, temp, nextt, list);
 			}
 			temp = nextt;
 			if (temp)
@@ -36,13 +33,13 @@ void insertion_sort_list(listint_t **list)
 }
 
 /**
- * Swap_Linked_List - swap a linked list
+ * SwapLink_L - swap a linked list
  * @pn: previous node
  * @temp: temp
  * @nxt: next node
  * @h: head of list
  */
-void Swap_Linked_List(listint_t *pn, listint_t *temp, listint_t *nxt, listint_t **h)
+void SwapLink_L(listint_t *pn, listint_t *temp, listint_t *nxt, listint_t **h)
 {
 
 	while (pn && temp->n < pn->n)
